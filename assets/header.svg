@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+<title id="title">Yoshihiro Suzuyama — Founder and CEO, RAYVEN</title>
+<desc id="desc">Building AI that works in the real world. Osaka, Japan. Dark navy banner with lime geometric blocks.</desc>
+<defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity=".035"/></pattern></defs>
+<rect width="1200" height="360" rx="18" fill="#101820"/>
+<rect width="1200" height="360" rx="18" fill="url(#grid)"/>
+<rect x="52" y="48" width="32" height="4" fill="#c5f36b"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="100" y="56" fill="#c5f36b" font-size="13" font-weight="700" letter-spacing="3">YOSHIY / FOUNDER &amp; BUILDER</text>
+<text x="52" y="135" fill="#f5f7f1" font-size="55" font-weight="700" letter-spacing="-2">Yoshihiro Suzuyama</text>
+<text x="55" y="190" fill="#f5f7f1" font-size="26">Building AI that works</text>
+<text x="55" y="226" fill="#f5f7f1" font-size="26">in the real world.</text>
+<text x="55" y="306" fill="#a7b3ba" font-size="14" letter-spacing="1">FOUNDER &amp; CEO, RAYVEN</text>
+<text x="680" y="306" fill="#a7b3ba" font-size="12" letter-spacing="2">OSAKA, JAPAN</text>
+</g>
+<g transform="translate(921 67)">
+<path d="M0 56L80 10L160 56L80 102Z" fill="#c5f36b"/>
+<path d="M0 56V112L80 158V102Z" fill="#7ca13e"/>
+<path d="M80 102L160 56V112L80 158Z" fill="#a3d358"/>
+<path d="M0 130L80 176L160 130M0 156L80 202L160 156" fill="none" stroke="#c5f36b" stroke-opacity=".35" stroke-width="2"/>
+<circle cx="80" cy="233" r="4" fill="#c5f36b"/>
+</g>
+</svg>
