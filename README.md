@@ -7,11 +7,13 @@
   <a href="https://www.wantedly.com/id/yoshihiro_suzuyama">Wantedly</a>
 </p>
 
+<p align="center"><a href="#technology-that-works-where-it-matters">English</a> · <a href="#日本語">日本語</a></p>
+
 ## Technology that works where it matters.
 
 **Yoshihiro Suzuyama / yoshiy** · Founder & CEO at RAYVEN · Osaka, Japan
 
-I started building software and improving workflows while working as a radiologic technologist. In 2024, I founded RAYVEN. Today, I build products that help companies put AI to work safely in their everyday operations.
+I founded RAYVEN in 2024. Based in Osaka, Japan, I build products that help companies put AI to work safely in their everyday operations.
 
 I care about the impact people can see in their work. My approach is to understand the problem, build a solution, and test it with the people who use it.
 
@@ -36,9 +38,7 @@ I care about the impact people can see in their work. My approach is to understa
 
 ### Background
 
-**Healthcare → Software & workflow improvement → RAYVEN**
-
-- Graduated from Fujita Health University and worked as a radiologic technologist at Kansai Medical University Hospital.
+**Software & workflow improvement → RAYVEN → AI governance**
 - Started building software and running an independent business while at university; founded RAYVEN in 2024.
 - Help organize the Osaka chapter of an AI-driven development community and speak about MCP and practical AI adoption.
 
@@ -79,4 +79,78 @@ Selected awards received by RAYVEN and its products.
 <p align="center">
 <strong>Let's connect over practical AI, product development, and community.</strong><br>
 <a href="https://rayven.co.jp/">Explore what we're building at RAYVEN →</a>
+</p>
+
+
+---
+
+## 日本語
+
+### 技術を、現場で役立つものに。
+
+**鈴山佳宏 / yoshiy** · 株式会社RAYVEN 代表取締役CEO · 大阪
+
+2024年にRAYVENを創業。大阪を拠点に、企業がAIを安心して業務に組み込むためのプロダクトをつくっています。
+
+大切にしているのは、使う人が実感できる効果。現場の課題を聞き、つくり、実際に使って確かめるところまで取り組みます。
+
+### いま、つくっているもの
+
+<table>
+<tr>
+<td width="50%" valign="top">
+<h3><a href="https://www.tumiki.cloud/">Tumiki ↗</a></h3>
+<p><strong>AIエージェントのガバナンス基盤</strong></p>
+<p>企業がAIに仕事を任せるための、身元・権限・操作記録の仕組み。MCPを通じた社内システムとの接続を管理します。</p>
+<sub>AI Governance / MCP / Access Control</sub>
+</td>
+<td width="50%" valign="top">
+<h3><a href="https://worklens-ai.com/">WorkLens AI ↗</a></h3>
+<p><strong>業務の実態を、AIが使える文脈へ</strong></p>
+<p>実測データから業務の流れを捉え、AIに任せられる仕事と導入効果を可視化。エージェントが業務を理解する土台をつくります。</p>
+<sub>Work Analytics / Context / AI Adoption</sub>
+</td>
+</tr>
+</table>
+
+### 経歴・活動
+
+**ソフトウェア開発・業務改善 → RAYVEN創業 → AIガバナンス**
+
+- 在学中から開発・個人事業に取り組み、2024年にRAYVENを創業。
+- AI駆動開発コミュニティ大阪支部の運営、MCP・AI活用に関する登壇・教育活動。
+
+### 主な受賞実績
+
+RAYVEN・プロダクトの受賞実績です。
+
+| 年 | 実績 |
+| :--- | :--- |
+| 2026 | **始動 Next Innovator** デモデー 最優秀賞 |
+| 2026 | **Business Model Award 2026** 最優秀賞 |
+| 2025 | **ミライノピッチ2025** NICT賞・近畿総合通信局長賞 |
+
+[受賞・表彰実績を見る →](https://rayven.co.jp/awards)
+
+### 使用技術
+
+TypeScript · React · Next.js · Tailwind CSS · Prisma · tRPC
+
+<details>
+<summary>公開リポジトリ</summary>
+<br>
+
+| Repository | 内容 |
+| :--- | :--- |
+| [claude-code-analytics](https://github.com/yoshiy-dev/claude-code-analytics) | 利用状況の分析・レポート機能を備えたNext.jsアプリ |
+| [bodyscan](https://github.com/yoshiy-dev/bodyscan) | Next.js・Prisma・tRPCを使ったWebアプリ |
+| [marp](https://github.com/yoshiy-dev/marp) | MarkdownとCSSでスライドをつくるMarpテンプレート |
+
+</details>
+
+---
+
+<p align="center">
+<strong>AIの業務活用・プロダクト開発・コミュニティでご一緒できる方へ。</strong><br>
+<a href="https://rayven.co.jp/">RAYVENの取り組みを見る →</a>
 </p>
