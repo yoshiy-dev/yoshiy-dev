@@ -17,6 +17,8 @@ I founded [RAYVEN](https://rayven.co.jp/) in 2024. Based in Osaka, Japan, we bui
 
 I work across product development and business, connecting customer problems with what we build. At RAYVEN, that means developing **Tumiki** and **WorkLens AI**, alongside helping teams design, deploy, and operate AI agents.
 
+Most of my work-related development takes place in private repositories. The public repositories below are a selection of projects and tools I can share.
+
 ### What I'm building
 
 <table>
@@ -77,9 +79,9 @@ Selected awards received by RAYVEN and its products.
 
 | Repository | About |
 | :--- | :--- |
-| [claude-code-analytics](https://github.com/yoshiy-dev/claude-code-analytics) | A Next.js app with usage analytics and reporting features |
-| [bodyscan](https://github.com/yoshiy-dev/bodyscan) | A web app built with Next.js, Prisma, and tRPC |
-| [marp](https://github.com/yoshiy-dev/marp) | A Marp template for creating slides with Markdown and CSS |
+| [claude-code-analytics](https://github.com/yoshiy-dev/claude-code-analytics) | A prototype dashboard for exploring Claude Code usage and analysis reports; the dashboard includes sample-data views |
+| [bodyscan](https://github.com/yoshiy-dev/bodyscan) | A web app for capturing posture images and comparing before-and-after results in posture analysis reports |
+| [marp](https://github.com/yoshiy-dev/marp) | A template for creating presentation slides in Markdown, with CSS styling and a GitHub Actions publishing workflow |
 
 </details>
 
@@ -102,6 +104,8 @@ Selected awards received by RAYVEN and its products.
 2024年に[RAYVEN](https://rayven.co.jp/)を創業。大阪を拠点に、AIエージェントを業務で活用するためのガバナンス・業務コンテキスト・実装の基盤をつくっています。
 
 顧客の課題とプロダクトをつなぎ、開発と事業の両面に取り組んでいます。**Tumiki**と**WorkLens AI**の開発・事業展開に加え、顧客チームとAIエージェントの設計・実装・運用を進めています。
+
+業務上の開発の多くは非公開リポジトリで行っています。ここでは、公開できるプロジェクトやツールの一部を紹介しています。
 
 ### いま、つくっているもの
 
@@ -160,9 +164,9 @@ TypeScript · React · Next.js · Tailwind CSS · Prisma · tRPC
 
 | Repository | 内容 |
 | :--- | :--- |
-| [claude-code-analytics](https://github.com/yoshiy-dev/claude-code-analytics) | 利用状況の分析・レポート機能を備えたNext.jsアプリ |
-| [bodyscan](https://github.com/yoshiy-dev/bodyscan) | Next.js・Prisma・tRPCを使ったWebアプリ |
-| [marp](https://github.com/yoshiy-dev/marp) | MarkdownとCSSでスライドをつくるMarpテンプレート |
+| [claude-code-analytics](https://github.com/yoshiy-dev/claude-code-analytics) | Claude Codeの利用状況や分析レポートを確認するダッシュボードの試作。サンプルデータによる表示を含みます |
+| [bodyscan](https://github.com/yoshiy-dev/bodyscan) | 姿勢画像を撮影し、前後の変化を姿勢分析レポートで比較するWebアプリ |
+| [marp](https://github.com/yoshiy-dev/marp) | Markdownで発表資料を作成し、CSSで見た目を調整できるテンプレート。GitHub Actionsによる公開ワークフローを備えます |
 
 </details>
 
