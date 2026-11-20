@@ -121,15 +121,14 @@ def step_boxes(s, x0, y, w, h, gap, steps, fills, icon=170, name=40, desc=30):
 # ---------- 1 表紙 ----------
 s = prs.slides.add_slide(BLANK)
 shape(s, MSO_SHAPE.RECTANGLE, 0, 0, 640, 1080, fill=A)
-text(s, 80, 380, 500, 190, 'Artex', 150, color=WHITE)
-text(s, 80, 580, 520, 60, 'AIペネトレーションテスト', 38, color=WHITE)
+text(s, 80, 360, 520, 300, 'AI\nペネトレーション\nテスト', 60, color=WHITE)
 s.shapes.add_picture(LOGO, px(1733), px(44), height=px(72))
-text(s, 760, 330, 1040, 100, '攻撃者が使うAIで', 76, weight900=True)
-shape(s, MSO_SHAPE.RECTANGLE, 750, 470 + 48, 7 * 76 + 40, 48, fill=MARK)
-text(s, 770, 450, 1040, 100, '攻撃者より先に', 76)
+text(s, 760, 330, 1040, 100, '攻撃者が実際に使うAIで', 76, weight900=True)
+shape(s, MSO_SHAPE.RECTANGLE, 750, 470 + 48, 8 * 76 + 40, 48, fill=MARK)
+text(s, 770, 450, 1040, 100, '本番同様の診断を', 76)
 text(s, 770, 640, 1000, 50, '企業の情報システム部門向け', 32, bold=False)
 text(s, 770, 700, 1000, 50, '株式会社RAYVEN', 32, bold=False)
-s.notes_slide.notes_text_frame.text = '攻撃者も使い始めたAIペンテストツールARTEXを使い、攻撃者より先に自社の弱点を見つけるサービスです。'
+s.notes_slide.notes_text_frame.text = '攻撃者が実際に使っているAIペンテストツールARTEXで診断するため、本番の攻撃と同様の結果が得られます。'
 
 # ---------- 2 課題 ----------
 s = frame('いま起きている攻撃', 2,
@@ -143,10 +142,10 @@ step_boxes(s, 240, 360, 440, 560, 60,
            [ST[0], ST[2], ST[3]])
 text(s, 240, 950, 1440, 34, '出典：Palo Alto Networks Unit 42（2026）、Qualys Blog（2026年11月15日）', 24, color=WEAK, bold=False, align='c')
 
-# ---------- 3 Artexの流れ ----------
-s = frame('Artexの診断の流れ', 3,
-          '偵察から攻撃の組み立てまではAIが自動で進めます。AIが見つけた結果は、専門家が確かめたうえで対策とあわせて報告します。')
-lead(s, '攻撃者と同じARTEXで、先に自社の弱点を見つける')
+# ---------- 3 診断の流れ ----------
+s = frame('診断の流れ', 3,
+          '攻撃者が実際に使うツールで、攻撃者と同じ手順をたどります。偵察から攻撃の組み立てまではAIが自動で進めます。AIが見つけた結果は、専門家が確かめたうえで対策とあわせて報告します。')
+lead(s, '攻撃者が実際に使うARTEXで、同じ手順をたどる', '本番の攻撃と同様の結果が分かる')
 W, G, X0, Y = 324, 48, 240, 380
 pill(s, X0 + (3 * W + 2 * G) / 2, Y, 'AIが自動で実行')
 pill(s, X0 + 3 * (W + G) + W / 2, Y, '専門家が確認')
@@ -180,13 +179,13 @@ big_number(s, 1320, '', '30', '万円〜', '費用（税抜）')
 
 # ---------- 5 安全性 ----------
 s = frame('診断環境の安全性', 5,
-          'Artexとその中で使うAIモデルは、RAYVEN社内のGPUサーバーで動かします。診断のデータを外部のAIサービスに送ることはありません。'
+          '攻撃ツールARTEXとその中で使うAIモデルは、RAYVEN社内のGPUサーバーで動かします。診断のデータを外部のAIサービスに送ることはありません。'
           '通信はすべて記録し、診断は事前に合意した範囲だけを対象にします。')
-lead(s, 'ArtexはRAYVEN社内のGPUで、AIごと動かす', '診断のデータは外部のAIサービスに渡さない')
+lead(s, '診断はRAYVEN社内のGPUで、AIごと動かす', '診断のデータは外部のAIサービスに渡さない')
 bx, by, bw, bh = 240, 370, 1000, 600
 shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, bx, by, bw, bh, fill=WHITE, line=A, lw=8, radius=24)
 pill(s, bx + bw / 2, by + 40, 'RAYVEN社内のGPU', size=30)
-for i, (ic, nm) in enumerate([('search', 'Artex'), ('gpu', 'AIモデル'), ('log', '通信の記録')]):
+for i, (ic, nm) in enumerate([('search', '攻撃ツール'), ('gpu', 'AIモデル'), ('log', '通信の記録')]):
     x = bx + 48 + i * 312
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, by + 150, 280, 400, fill=WHITE, line=FRAME, lw=6, radius=24)
     s.shapes.add_picture(ICON(ic), px(x + 60), px(by + 200), px(160), px(160))
