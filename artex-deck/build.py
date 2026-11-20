@@ -142,8 +142,34 @@ step_boxes(s, 240, 360, 440, 560, 60,
            [ST[0], ST[2], ST[3]])
 text(s, 240, 950, 1440, 34, '出典：Palo Alto Networks Unit 42（2026）、Qualys Blog（2026年11月15日）', 24, color=WEAK, bold=False, align='c')
 
-# ---------- 3 診断の流れ ----------
-s = frame('診断の流れ', 3,
+# ---------- 3 比較 ----------
+s = frame('診断方法の比較', 3,
+          '運用保守だけでペンテストをしていない場合、実際に侵入できるかは分かりません。人が手作業で行う従来のペンテストは本番同様の結果が出ますが、費用は範囲により数十万円から数百万円と幅があります。'
+          'この診断は、攻撃者と同じARTEXでAIが試し、結果を専門家が確かめます。')
+lead(s, '人が行うペンテストと同じく、実際に侵入できるかまで確かめる', '攻撃者と同じAIの手口で、30万円から')
+cols = [('運用保守のみ', '8A94A6'), ('従来のペンテスト', '8A94A6'), ('この診断', A)]
+LX, LW, CW, GAP, TY = 240, 360, 354, 6, 360
+for j, (h, c) in enumerate(cols):
+    x = LX + LW + GAP + j * (CW + GAP)
+    shape(s, MSO_SHAPE.RECTANGLE, x, TY, CW, 90, fill=c)
+    text(s, x, TY, CW, 90, h, 32, color=WHITE, align='c', anchor='m')
+rows = [('実際に侵入\nできるか', [('×', 'ペンテストをしない'), ('○', '人が試す'), ('○', 'AIが試し人が確認')]),
+        ('攻撃者の\nAIツール', [('×', ''), ('—', '人の手作業'), ('○', '同じARTEXで試す')]),
+        ('費用', [('—', ''), ('数十万〜数百万円', '範囲により変わる'), ('30万円〜', '税抜')])]
+for i, (lb, cells) in enumerate(rows):
+    y = TY + 90 + GAP + i * (150 + GAP)
+    shape(s, MSO_SHAPE.RECTANGLE, LX, y, LW, 150, fill='EEEEEC')
+    text(s, LX + 32, y, LW - 64, 150, lb, 32, anchor='m')
+    for j, (sym, why) in enumerate(cells):
+        x = LX + LW + GAP + j * (CW + GAP); own = j == 2
+        shape(s, MSO_SHAPE.RECTANGLE, x, y, CW, 150, fill='E8EBF3' if own else 'F5F5F3')
+        big = len(sym) == 1
+        text(s, x + 16, y + (14 if why else 37), CW - 32, 76, sym, 64 if big else 34, color=A if own else TEXT, align='c', anchor='m')
+        if why: text(s, x + 16, y + 96, CW - 32, 44, why, 28, color=TEXT, bold=False, align='c')
+text(s, 240, 960, 1440, 34, '従来のペンテストの費用：CREX GROUP、ITトレンドの解説記事（2026年11月確認）', 24, color=WEAK, bold=False, align='c')
+
+# ---------- 4 診断の流れ ----------
+s = frame('診断の流れ', 4,
           '攻撃者が実際に使うツールで、攻撃者と同じ手順をたどります。偵察から攻撃の組み立てまではAIが自動で進めます。AIが見つけた結果は、専門家が確かめたうえで対策とあわせて報告します。')
 lead(s, '攻撃者が実際に使うARTEXで、同じ手順をたどる', '本番の攻撃と同様の結果が分かる')
 W, G, X0, Y = 324, 48, 240, 380
@@ -156,59 +182,46 @@ step_boxes(s, X0, Y + 100, W, 500, G,
             ('report', '確認と報告', '対策とあわせて報告')],
            ST, icon=150, name=36, desc=28)
 
-# ---------- 4 期間と費用 ----------
-s = frame('診断の期間と費用', 4, '費用は診断する範囲に応じてお見積もりします。30万円（税抜）は最小構成の目安です。')
+# ---------- 5 安全性 ----------
+s = frame('診断の安全性', 5,
+          '診断は、事前に合意した時間帯だけ実施し、業務への影響を避けます。攻撃ツールとAIモデルはRAYVEN社内のGPUで動くローカルLLMで動かし、診断のデータを外部のAIサービスに送ることはありません。通信はすべて記録します。')
+lead(s, '攻撃者と同じ道具を使っても、業務とデータは守る')
+for i, (no, ic, hd, ln) in enumerate([('point 1', 'clock', '時間帯を決める', '合意した時間帯だけ実施する'),
+                                      ('point 2', 'gpu', '社内のローカルLLM', '診断データを外部のAIに渡さない')]):
+    x = 240 + i * 740
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, 300, 700, 560, fill=WHITE, line=A if i else FRAME, lw=8, radius=24)
+    pill(s, x + 350, 340, no, size=28, outline=True)
+    s.shapes.add_picture(ICON(ic), px(x + 260), px(420), px(180), px(180))
+    text(s, x + 40, 640, 620, 70, hd, 48, color=A, align='c')
+    text(s, x + 40, 740, 620, 50, ln, 32, align='c')
+text(s, 240, 920, 1440, 50, '通信はすべて記録し、何をしたかを後から追える', 30, align='c')
+
+# ---------- 6 期間・費用・相談 ----------
+s = frame('期間と費用', 6, '費用は診断する範囲に応じてお見積もりします。まずはメールで、診断したい対象をお知らせください。')
 lead(s, '1回の診断を約1週間で終え、診断報告書を渡す')
 
 
-def big_number(s, cx, pre, num, unit, cap):
-    nw = len(num) * 280 * 0.62
-    pw = len(pre) * 64 + (16 if pre else 0)
-    uw = sum(0.6 if ord(c) < 128 else 1 for c in unit) * 64
-    total = pw + nw + 16 + uw; x = cx - total / 2; base = 800
-    shape(s, MSO_SHAPE.RECTANGLE, x + pw - 10, base - 95, nw + 16 + uw + 50, 90, fill=MARK)
-    if pre: text(s, x, base - 90, pw, 84, pre, 64, anchor='b')
-    text(s, x + pw, base - 300, nw + 10, 300, num, 280, color=A, anchor='b')
-    text(s, x + pw + nw + 16, base - 90, uw + 20, 84, unit, 64, color=A, anchor='b')
-    text(s, cx - 340, base + 60, 680, 50, cap, 36, align='c')
+def big_number(s, cx, pre, num, unit, cap, size=220, base=600):
+    nw = len(num) * size * 0.62; us = size * 0.25
+    pw = len(pre) * us + (16 if pre else 0)
+    uw = sum(0.6 if ord(c) < 128 else 1 for c in unit) * us
+    total = pw + nw + 16 + uw; x = cx - total / 2; mh = size / 3
+    shape(s, MSO_SHAPE.RECTANGLE, x + pw - 10, base - mh - 5, nw + 16 + uw + 50, mh, fill=MARK)
+    if pre: text(s, x, base - us * 1.4, pw, us * 1.3, pre, us, anchor='b')
+    text(s, x + pw, base - size * 1.07, nw + 10, size * 1.07, num, size, color=A, anchor='b')
+    text(s, x + pw + nw + 16, base - us * 1.4, uw + 20, us * 1.3, unit, us, color=A, anchor='b')
+    text(s, cx - 340, base + 40, 680, 50, cap, 34, align='c')
 
 
 big_number(s, 600, '約', '1', '週間', '診断期間（1回）')
-shape(s, MSO_SHAPE.RECTANGLE, 957, 430, 6, 520, fill=FRAME)
+shape(s, MSO_SHAPE.RECTANGLE, 957, 330, 6, 360, fill=FRAME)
 big_number(s, 1320, '', '30', '万円〜', '費用（税抜）')
-
-# ---------- 5 安全性 ----------
-s = frame('診断環境の安全性', 5,
-          '攻撃ツールARTEXとその中で使うAIモデルは、RAYVEN社内のGPUサーバーで動かします。診断のデータを外部のAIサービスに送ることはありません。'
-          '通信はすべて記録し、診断は事前に合意した範囲だけを対象にします。')
-lead(s, '診断はRAYVEN社内のGPUで、AIごと動かす', '診断のデータは外部のAIサービスに渡さない')
-bx, by, bw, bh = 240, 370, 1000, 600
-shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, bx, by, bw, bh, fill=WHITE, line=A, lw=8, radius=24)
-pill(s, bx + bw / 2, by + 40, 'RAYVEN社内のGPU', size=30)
-for i, (ic, nm) in enumerate([('search', '攻撃ツール'), ('gpu', 'AIモデル'), ('log', '通信の記録')]):
-    x = bx + 48 + i * 312
-    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, by + 150, 280, 400, fill=WHITE, line=FRAME, lw=6, radius=24)
-    s.shapes.add_picture(ICON(ic), px(x + 60), px(by + 200), px(160), px(160))
-    text(s, x + 20, by + 410, 240, 50, nm, 36, align='c')
-arrow_line(s, bx + bw + 4, by + bh / 2, 1440, by + bh / 2, head=False)
-shape(s, MSO_SHAPE.OVAL, 1290, by + bh / 2 - 50, 100, 100, fill=WHITE, line=A, lw=8)
-text(s, 1290, by + bh / 2 - 50, 100, 100, '×', 60, color=A, align='c', anchor='m')
-shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 1440, by + 130, 240, 340, fill=WHITE, line=FRAME, lw=6, radius=24, dash=True)
-s.shapes.add_picture(ICON('cloud'), px(1490), px(by + 170), px(140), px(140))
-text(s, 1460, by + 340, 200, 100, '外部の\nAIサービス', 30, color=SUB, align='c')
-
-# ---------- 6 次のアクション ----------
-s = frame('ご相談の流れ', 6, 'まずはメールで、診断したい対象をお知らせください。範囲とお見積もりを決めてから、約1週間で診断と報告を行います。')
-lead(s, '診断したい範囲を、まず一緒に決める')
-step_boxes(s, 240, 290, 440, 470, 60,
-           [('mail', 'お問い合わせ', 'メールで受け付ける'),
-            ('scope', '範囲の合意', '対象と見積もりを決める'),
-            ('report', '診断と報告', '約1週間で実施し報告する')],
-           [ST[0], ST[2], ST[3]], icon=150)
+shape(s, MSO_SHAPE.RECTANGLE, 240, 740, 1440, 2, fill=HAIR)
+text(s, 240, 780, 1440, 50, '診断したい範囲を、まずメールで相談する', 36, align='c')
 mail = 'info@rayven.cloud'
-mw = len(mail) * 72 * 0.62
-shape(s, MSO_SHAPE.RECTANGLE, 960 - mw / 2 - 25, 880, mw + 50, 40, fill=MARK)
-text(s, 240, 820, 1440, 100, mail, 72, color=A, align='c', anchor='m')
+mw = len(mail) * 80 * 0.62
+shape(s, MSO_SHAPE.RECTANGLE, 960 - mw / 2 - 25, 912, mw + 50, 40, fill=MARK)
+text(s, 240, 850, 1440, 110, mail, 80, color=A, align='c', anchor='m')
 
 out = os.path.join(HERE, 'Artex_サービス説明.pptx')
 prs.save(out)
