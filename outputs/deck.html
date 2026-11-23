@@ -66,22 +66,22 @@ th{background:var(--navy);color:#fff;font-weight:700}
 <!-- 2 一覧 -->
 <section class="slide">
   <div class="abs tag"><b>/// OVERVIEW</b>　ご相談一覧</div>
-  <h2>どの相談も「小さく試し、人が確認して広げる」が基本です</h2>
+  <h2>どの相談も「結果 → データ → 整える」の順で考えます</h2>
   <div class="abs" style="left:64px;top:176px;width:1152px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
     <div class="card" style="padding:14px 20px"><div class="t28"><b style="color:var(--acc)">01</b> 治具設計・4M解析</div><div class="note">条件と比較軸を伝える</div></div>
-    <div class="card" style="padding:14px 20px"><div class="t28"><b style="color:var(--acc)">02</b> 検図セルフチェック</div><div class="note">表題欄・単位・注記から</div></div>
+    <div class="card" style="padding:14px 20px"><div class="t28"><b style="color:var(--acc)">02</b> 検図セルフチェック</div><div class="note">元のCADデータを読ませる</div></div>
     <div class="card" style="padding:14px 20px"><div class="t28"><b style="color:var(--acc)">03</b> 社内規程ボット</div><div class="note">現行規程を参照元にする</div></div>
     <div class="card" style="padding:14px 20px"><div class="t28"><b style="color:var(--acc)">04</b> 代表電話のAI取次</div><div class="note">取次と伝言から試す</div></div>
     <div class="card" style="padding:14px 20px"><div class="t28"><b style="color:var(--acc)">05</b> コンプライアンス発信</div><div class="note">迷う場面を三択に</div></div>
-    <div class="card" style="padding:14px 20px"><div class="t28"><b style="color:var(--acc)">06</b> 育成データの整理</div><div class="note">様式の対応表を作る</div></div>
-    <div class="card" style="padding:14px 20px"><div class="t28"><b style="color:var(--acc)">07</b> 請求書の読取・照合</div><div class="note">専用OCRと並べて測る</div></div>
-    <div class="card" style="padding:14px 20px"><div class="t28"><b style="color:var(--acc)">08</b> 新しい活用法・事例</div><div class="note">計算表をアプリに</div></div>
+    <div class="card" style="padding:14px 20px"><div class="t28"><b style="color:var(--acc)">06</b> 育成データの整理</div><div class="note">結果から逆算して整理</div></div>
+    <div class="card" style="padding:14px 20px"><div class="t28"><b style="color:var(--acc)">07</b> 請求書の読取・照合</div><div class="note">有料OCRなしで照合</div></div>
+    <div class="card" style="padding:14px 20px"><div class="t28"><b style="color:var(--acc)">08</b> 新しい活用法・事例</div><div class="note">計算表アプリ・AI音声</div></div>
     <div class="card" style="padding:14px 20px"><div class="t28"><b style="color:var(--acc)">09</b> 不具合ナレッジ化</div><div class="note">代表事例を6項目で揃える</div></div>
   </div>
   <div class="abs row" style="left:64px;top:592px;width:1152px;justify-content:center;gap:20px">
-    <div class="box dk" style="width:300px">小さく試す</div><div class="arr">→</div>
-    <div class="box dk" style="width:300px">人が確認する</div><div class="arr">→</div>
-    <div class="box ac" style="width:300px">広げる</div>
+    <div class="box dk" style="width:330px;font-size:26px">① 出したい結果を決める</div><div class="arr">→</div>
+    <div class="box dk" style="width:330px;font-size:26px">② 必要なデータを決める</div><div class="arr">→</div>
+    <div class="box ac" style="width:330px;font-size:26px">③ AIが読みやすく整える</div>
   </div>
   <div class="abs pg">2</div>
 </section>
@@ -112,12 +112,12 @@ th{background:var(--navy);color:#fff;font-weight:700}
 <!-- 4 No.2 -->
 <section class="slide">
   <div class="abs tag"><b>/// CASE 02</b>　Copilotによる検図セルフチェック</div>
-  <h2>正誤が明確な項目に絞り、出力の形を固定します</h2>
+  <h2>出力の形を決め、PDFではなく元のCADデータを読ませます</h2>
   <div class="abs ask">
     <div class="lbl">ご相談</div>
     <div class="q">プロンプトの構成の仕方や、AIが理解しやすい内容を知りたい。</div>
-    <div class="lbl n" style="margin-top:28px">進め方</div>
-    <div class="q">正解付きの図面で見逃し・誤指摘・確認時間を測り、安定した項目から使う。</div>
+    <div class="lbl n" style="margin-top:28px">ツールについて</div>
+    <div class="q">Copilotだけでは難しい。社内のClaude Code利用者と、元データで試す。</div>
   </div>
   <div class="abs r">
     <div class="lbl n">プロンプトで指定する3点</div>
@@ -132,7 +132,7 @@ th{background:var(--navy);color:#fff;font-weight:700}
       <tr><td>表題欄の図番</td><td>不適合</td><td>右下</td><td>社内ルール◯条</td></tr>
       <tr><td>寸法の単位</td><td style="color:var(--acc);font-weight:700">判定不能</td><td>—</td><td>読み取れない</td></tr>
     </table>
-    <div class="note" style="margin-top:16px">Loopの製図ナレッジには、各ルールの適用条件と正誤例を添えます</div>
+    <div class="note" style="margin-top:16px">正解付きの図面で見逃し・誤指摘・確認時間を測り、安定した項目から使います</div>
   </div>
   <div class="abs pg">4</div>
 </section>
@@ -224,50 +224,50 @@ th{background:var(--navy);color:#fff;font-weight:700}
 <!-- 8 No.6 -->
 <section class="slide">
   <div class="abs tag"><b>/// CASE 06</b>　過去の育成データの整理・条件探索</div>
-  <h2>様式の対応表を作り、出所と「不明」を残して統合します</h2>
+  <h2>3段階で、過去の育成データを使える形にします</h2>
   <div class="abs ask" style="height:440px">
     <div class="lbl">ご相談（問題点）</div>
     <div class="q" style="font-size:26px">① 記載テンプレートが途中で大きく変更<br>② 条件変更のメモがあちこちに散乱<br>③ 追加データが説明なく数値のみ<br>④ 条件変更の意図が残っていない</div>
   </div>
   <div class="abs r">
-    <div class="box dk" style="text-align:left">1. 様式ごとに代表ファイルを選び、項目・単位・セル位置を対応付け</div>
-    <div class="row" style="margin-top:12px;gap:12px;align-items:stretch">
-      <div class="box" style="flex:1;text-align:left">2a. 定位置の値<div class="t24">ルールで抽出</div></div>
-      <div class="box" style="flex:1;text-align:left">2b. 散在するメモ<div class="t24">AIで分類 → 担当者が確認</div></div>
-    </div>
-    <div class="box ac" style="margin-top:12px;text-align:left">3. 元ファイル・シート・セル付きで統合。<br>意味や理由が分からなければ「不明」</div>
-    <div class="lbl n" style="margin-top:20px">今後の記録（育成ごとに1行）</div>
+    <div class="lbl n">1. 出したい結果を決める</div>
+    <div class="box dk" style="text-align:left">条件ごとに、育成への効き方を比べられる表</div>
+    <div class="lbl n" style="margin-top:16px">2. 必要なデータを決める</div>
     <div class="row" style="gap:8px;flex-wrap:wrap"><span class="chip">育成ID</span><span class="chip">条件名</span><span class="chip">値</span><span class="chip">単位</span><span class="chip" style="border-color:var(--acc)">変更理由</span><span class="chip">結果</span></div>
+    <div class="lbl n" style="margin-top:16px">3. AIが読みやすく整える</div>
+    <div class="row" style="gap:10px;align-items:stretch">
+      <div class="box" style="flex:1;font-size:24px">様式の対応付け<div class="t24">項目・単位・位置</div></div>
+      <div class="box" style="flex:1;font-size:24px">値はルール抽出<div class="t24">メモはAI分類</div></div>
+      <div class="box ac" style="flex:1;font-size:24px">出所を記録<div class="t24">不明は「不明」</div></div>
+    </div>
   </div>
-  <div class="abs note" style="left:64px;top:644px">傾向は条件の揃ったデータで見て、効いたかは追加の比較や試験で確かめます</div>
+  <div class="abs note" style="left:64px;top:644px">今後は2の列で記録すれば、そのままAIで比べられます。効果は追加の比較や試験で確認</div>
   <div class="abs pg">8</div>
 </section>
 
 <!-- 9 No.7 -->
 <section class="slide">
   <div class="abs tag"><b>/// CASE 07</b>　請求書の読み取り・支払予定データとの照合</div>
-  <h2>実際の請求書で専用OCRと並べて測り、判断します</h2>
+  <h2>有料OCRを入れなくても、照合は自動化できる見込みです</h2>
   <div class="abs ask">
     <div class="lbl">ご相談</div>
     <div class="q">Copilotで請求書PDFをExcel化したが誤りがあった。有料OCRの代わりになるか。</div>
-    <div class="lbl n" style="margin-top:28px">試すデータ</div>
-    <div class="q">様式の異なるPDFと、紙をスキャンした請求書。</div>
+    <div class="lbl n" style="margin-top:28px">判断の軸</div>
+    <div class="q">月の件数と、いまの照合にかかる工数・人件費を比べる。</div>
   </div>
   <div class="abs r">
-    <div class="row" style="gap:12px">
-      <div class="box dk" style="width:150px;white-space:nowrap">① 抽出</div>
-      <div class="t24" style="flex:1">請求番号・取引先・金額・日付を抜き出し、正解と照合</div>
+    <div class="lbl n">方法A：自前の仕組み</div>
+    <div class="row" style="gap:12px;align-items:stretch">
+      <div style="width:300px;display:flex;flex-direction:column;gap:12px">
+        <div class="box">メールの請求書<div class="t24">自動で読み取り</div></div>
+        <div class="box">銀行のAPI<div class="t24">入出金の明細</div></div>
+      </div>
+      <div class="arr" style="align-self:center">→</div>
+      <div class="box dk" style="flex:1;display:flex;align-items:center;justify-content:center">自動で照合</div>
     </div>
-    <div class="row" style="gap:12px;margin-top:16px">
-      <div class="box dk" style="width:150px;white-space:nowrap">② 突合</div>
-      <div class="t24" style="flex:1">会計ソフトから出した支払予定データと、決めたルールで突き合わせ</div>
-    </div>
+    <div class="lbl n" style="margin-top:20px">方法B：既存の機能</div>
+    <div class="card t24">会計ソフトに照合機能があれば、まずそれを使う</div>
     <div class="card t24" style="margin-top:12px;border-color:var(--acc)">分割・合算・重複・金額不一致は、担当者の確認に回す</div>
-    <div class="lbl n" style="margin-top:20px">導入判断で比べる4点</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-      <div class="box">読み取り精度</div><div class="box">確認・修正の時間</div>
-      <div class="box">会計データとの連携</div><div class="box">費用</div>
-    </div>
   </div>
   <div class="abs pg">9</div>
 </section>
@@ -290,11 +290,14 @@ th{background:var(--navy);color:#fff;font-weight:700}
       <div class="box" style="width:250px">不具合報告</div><div class="arr">→</div>
       <div class="box dk" style="flex:1;font-size:24px">事実・原因の仮説・次の確認</div>
     </div>
-    <div class="note" style="margin-top:8px">計算表は、入力例で結果が一致するか確認できます</div>
-    <div class="lbl n" style="margin-top:24px">社外事例</div>
+    <div class="row" style="gap:12px;margin-top:12px">
+      <div class="box" style="width:250px;font-size:24px">AI音声・アバター</div><div class="arr">→</div>
+      <div class="box dk" style="flex:1;font-size:24px">研修・案内動画の作成</div>
+    </div>
+    <div class="lbl n" style="margin-top:14px">社外事例</div>
     <div class="row" style="gap:12px;align-items:stretch">
-      <div class="card" style="flex:1"><div class="t28"><b>Schaeffler</b></div><div class="t24">工場データの活用</div></div>
-      <div class="card" style="flex:1"><div class="t28"><b>Siemens</b></div><div class="t24">設備開発や工程に産業向けAI</div></div>
+      <div class="card" style="flex:1;padding:10px 20px"><div class="t28"><b>Schaeffler</b></div><div class="t24">工場データの活用</div></div>
+      <div class="card" style="flex:1;padding:10px 20px"><div class="t28"><b>Siemens</b></div><div class="t24">設備開発や工程に産業向けAI</div></div>
     </div>
   </div>
   <div class="abs" style="left:64px;top:672px;font-size:16px;color:var(--gray);line-height:1.4">出典：microsoft.com/en/customers/story/20385-schaeffler-microsoft-fabric ／ news.microsoft.com/source/2024/10/24/siemens-and-microsoft-scale-industrial-ai/</div>
@@ -304,7 +307,7 @@ th{background:var(--navy);color:#fff;font-weight:700}
 <!-- 11 No.9 -->
 <section class="slide">
   <div class="abs tag"><b>/// CASE 09</b>　不具合問い合わせ・回答事例のナレッジ化</div>
-  <h2>事例は6項目で揃え、社内で試してから顧客対応に使います</h2>
+  <h2>出したい結果から逆算し、事例を6項目で揃えます</h2>
   <div class="abs ask">
     <div class="lbl">ご相談</div>
     <div class="q">データの整理が必要なのは理解している。どの程度定型化すべきか。</div>
@@ -312,18 +315,18 @@ th{background:var(--navy);color:#fff;font-weight:700}
     <div class="q">代表事例を選び、既存のPDF・PowerPointに紐づける。</div>
   </div>
   <div class="abs r">
-    <div class="lbl n">定型化する6項目</div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:24px">
-      <div class="box">製品・型番</div><div class="box">症状</div><div class="box">発生条件</div>
-      <div class="box" style="font-size:24px">確認済みの原因</div><div class="box">対処</div><div class="box ac">適用条件</div>
-    </div>
-    <div class="lbl n" style="margin-top:24px">使い方</div>
+    <div class="lbl n">1. 出したい結果（顧客へは担当者の確認後）</div>
     <div class="row" style="gap:10px;align-items:stretch">
       <div class="box dk" style="flex:1.4;font-size:24px;text-align:left">AIが出す：類似事例・回答案・根拠資料・追加で聞くこと</div>
       <div class="arr" style="align-self:center">→</div>
       <div class="box" style="flex:1;font-size:24px">担当者が元資料と照合</div>
       <div class="arr" style="align-self:center">→</div>
       <div class="box" style="flex:.6;font-size:24px;padding-top:28px">顧客</div>
+    </div>
+    <div class="lbl n" style="margin-top:24px">2. 揃える6項目</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:24px">
+      <div class="box">製品・型番</div><div class="box">症状</div><div class="box">発生条件</div>
+      <div class="box" style="font-size:24px">確認済みの原因</div><div class="box">対処</div><div class="box ac">適用条件</div>
     </div>
     <div class="note" style="margin-top:16px">最初は営業・技術の担当者が社内で試し、別製品や条件の異なる対処が混ざらないか確認します</div>
   </div>
